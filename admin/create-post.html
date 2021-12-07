@@ -5,9 +5,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        body{
-            text-align: center;
-        }
+       
     </style>
 </head>
 <body>
@@ -16,9 +14,11 @@
 
 <form id="create-post-form">
 <label for="">Content</label> <br>
-<textarea name="content" id="content-text-area" cols="30" rows="10"></textarea>
+<input type="text" id="title-input" placeholder="Title"> <br>
+<input type="text" id="author-input" placeholder="Author"> <br>
+<textarea name="content" id="content-text-area" cols="30" rows="10" placeholder="Write post..."></textarea> <br>
 
-<input type="submit" value="create">
+<input type="submit" value="Post">
 
 </form>
 
