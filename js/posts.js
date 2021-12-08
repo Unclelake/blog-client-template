@@ -1,7 +1,7 @@
 const postsElement = document.querySelector(".blog-posts");
 
 async function fetchAllPosts() {
-  console.log("fetching posts");
+  // console.log("fetching posts");
   try {
     let response = await fetch("http://localhost:5000/posts");
     console.log(response.status);
