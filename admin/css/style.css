@@ -1,0 +1,9 @@
+:root{
+    /*Margins*/
+    --main-margin: 2rem;
+
+    /*Colors*/
+}
+.container{
+    margin-top: var(--main-margin);
+}
