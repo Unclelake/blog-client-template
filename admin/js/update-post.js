@@ -14,6 +14,9 @@ window.onload = function() {
 async function getPost(id){
     try{
         let response    = await fetch('http://localhost:5000/posts/' + id);
+        if(!response.ok){
+            throw new Error('Some problems with connecting to API')
+        }
         let post        = await response.json();
         //console.log(post)
     
