@@ -17,7 +17,7 @@ async function fetchJson() {
             <td>${post.title}</td>
             <td>${post.author}</td>
             <td>${post.date}</td>
-            <td><a href='#'>Update</a>|<a herf='#'>Delete</a></td>
+            <td><a href="../admin/update-post.html?id=${post['_id']}">Update</a>|<a herf='#'>Delete</a></td>
             </tr>
             
             `;
