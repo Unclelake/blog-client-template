@@ -13,7 +13,7 @@ window.onload = function() {
      */
 
      
-    let post = getPost();
+    getPost();
 
     /**
      * Add here an eventlistener to update the pun, when the form is submitted
@@ -25,41 +25,40 @@ window.onload = function() {
      * 5. If the form was successfully submitted, then redirect to the index.html with the following code: window.location.replace('index.html');
      */
 
-    let form = document.getElementById('update-pun-form');
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault
-        let formData = new formData(form);
-        formDataObject = {
-            "content": formData.get('content')
-        }
+    // let form = document.getElementById('update-pun-form');
+    // form.addEventListener('submit', async (e) => {
+    //     e.preventDefault
+    //     let formData = new formData(form);
+    //     formDataObject = {
+    //         "content": formData.get('content')
+    //     }
 
-        try {
-            await fetch('https://puns-app.herokuapp.com/puns/' + urlParams.get('id'), {
-                method: 'PATCH', // GET, POST, PATCH, DELETE.
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formDataObject)
-            })
+    //     try {
+    //         await fetch('https://puns-app.herokuapp.com/puns/' + urlParams.get('id'), {
+    //             method: 'PATCH', // GET, POST, PATCH, DELETE.
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify(formDataObject)
+    //         })
             
-            location.replace('index.html');
-        } catch(error) {
-            console.log(error)
-        }
-    }
-)}
+    //         location.replace('index.html');
+    //     } catch(error) {
+    //         console.log(error)
+    //     }
+    // }
+}
 
 
 async function getPost (){
-
     try{
-        let response    = await fetch('https://localhost:5000/posts');
+        let response    = await fetch('http://localhost:5000/posts');
         let post        = await response.json();
         console.log(post)
     
-        document.getElementById('content-textarea').value = pun.content;
+        //document.getElementById('content-textarea').value = post.content;
     
-        return pun;
+        return post;
     }catch(error){
         console.log(error)
     }
