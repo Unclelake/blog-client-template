@@ -1,5 +1,10 @@
 window.onload = function() {
-    let updateBtn = document.getElementById('update-btn');
+    let queryString = location.search;       // retrieving the querystring
+    console.log(queryString);
+    let urlParams = new URLSearchParams(queryString);
+    console.log(urlParams.get('id'));
+
+    
     
     /**
      * Fetch here the specific pun that is about to be updated.
@@ -13,7 +18,7 @@ window.onload = function() {
      */
 
      
-    getPost();
+    getPost('61af4ce99f4163242016d792'); //urlParams.get('id')
 
     /**
      * Add here an eventlistener to update the pun, when the form is submitted
@@ -25,7 +30,7 @@ window.onload = function() {
      * 5. If the form was successfully submitted, then redirect to the index.html with the following code: window.location.replace('index.html');
      */
 
-    // let form = document.getElementById('update-pun-form');
+    // 
     // form.addEventListener('submit', async (e) => {
     //     e.preventDefault
     //     let formData = new formData(form);
@@ -49,15 +54,30 @@ window.onload = function() {
     // }
 }
 
+// function updatePost (id){
+//     let form = document.getElementById('update-post-form');
+//     form.addEventListener('submit', async (e) => {
+//         e.preventDefault();
+//         let formData = new formData(form);
+//         formDataObject = {
+//             "content": formData.get('content')
+//         }
+//         console.log('content')
+//     })
+// }
 
-async function getPost (){
+
+async function getPost (id){
     try{
-        let response    = await fetch('http://localhost:5000/posts');
+        let response    = await fetch('http://localhost:5000/posts/' + id);
         let post        = await response.json();
         console.log(post)
     
-        //document.getElementById('content-textarea').value = post.content;
-    
+        document.getElementById('content-textarea').value   = post.content;
+        document.getElementById('author').value             = post.author;
+        document.getElementById('title').value              = post.title;
+        // document.getElementById('tags').value = tags.content;
+        
         return post;
     }catch(error){
         console.log(error)
