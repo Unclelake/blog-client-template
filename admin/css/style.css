@@ -7,3 +7,6 @@
 .container{
     margin-top: var(--main-margin);
 }
+#content{
+    margin-top:var(--main-margin)
+}
