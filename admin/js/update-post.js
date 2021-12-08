@@ -5,9 +5,8 @@ window.onload = function() {
     console.log(urlParams.get('id'));
 
      
-    getPost('61af4ce99f4163242016d792'); //urlParams.get('id')
-
-    updatePost('61af4ce99f4163242016d792')
+    getPost(urlParams.get('id')); //urlParams.get('id')
+    updatePost(urlParams.get('id'))
 
     
 }
