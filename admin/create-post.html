@@ -4,30 +4,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
-    <style>
-       
-    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
 </head>
 <body>
-<div id="container">
-<h1>New Post</h1>
-
-<form id="create-post-form">
-<label for="">Content</label> <br>
-<input type="text" id="title-input" placeholder="Title"> <br>
-<input type="text" id="author-input" placeholder="Author"> <br>
-<textarea name="content" id="content-text-area" cols="30" rows="10" placeholder="Write post..."></textarea> <br>
-
-<input type="submit" value="Post">
-
-</form>
-
-</div>
-
-<footer>
-   <a href="/admin/index.html">Back to admin</a>
-</footer>
-
-    <script src="js/create-post.js"></script>
+    <div>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="../admin/index.html">Admin</a>
+            </li>
+          </ul>
+        </nav>
+  
+          <div class="d-flex flex-column align-items-center" id="content">
+              <h1>Create post</h1>
+              <form class="col-sm-8" id="create-post-form">
+                  <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" id="title" name="title">
+                  </div>
+                  <div class="form-group">
+                      <label for="author">Author</label>
+                      <input type="text" class="form-control" id="author" name="author">
+                    </div>
+                  <div class="form-group">
+                    <label for="content-textarea">Content</label>
+                    <textarea class="form-control" id="content-textarea" name="content" rows="10"></textarea>
+                  </div>
+                  <div class="form-group">
+                      <label for="tags">Tags</label>
+                      <select class="form-control" name="tags" id="tags" size="1" multiple>
+                          <option value="covid-19">Covid 19</option>
+                      </select>
+                  </div>
+                  <input type="submit" class="btn btn-dark" value="Create" id="create-btn">
+                  
+                </form>   
+              </div>
+          </div>
+      </div>
+  
+      <script src="js/update-post.js"></script>
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script> 
 </body>
 </html>
