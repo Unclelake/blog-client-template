@@ -1,0 +1,10 @@
+:root{
+    /*Margins*/
+    --main-margin: 2rem;
+
+    /*Colors*/
+}
+
+#content{
+    margin-top:var(--main-margin)
+}

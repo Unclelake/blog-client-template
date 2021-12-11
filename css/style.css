@@ -1,0 +1,15 @@
+.blog-header {
+    display: flex;
+    justify-content: center;
+}
+
+.author {
+    font-weight: bold;
+}
+
+.content {
+    padding-top: 10px;
+}
+ a .delete-links{
+    cursor: pointer;
+}
