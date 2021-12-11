@@ -6,20 +6,13 @@ function createPostEvent(){
     let createForm = document.getElementById("create-post-form");
 
 
-createForm.addEventListener('submit', async function(e) {
-    e.preventDefault();
+    createForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
 
-  /*{  "title": "Title 3",
-    "content": "Content. 3",
-    "author": "Author name 2",
-    "tags": ["Travel","JavaScript"] 
-}
-    */
-
-let formData = {
-    "title": document.getElementById('title-input').innerHTML,
-    "author": document.getElementById('author-input').innerHTML,
-    "content": document.getElementById('content-text-area').innerHTML
+   let formData = {
+      "title": document.getElementById('title-input').innerHTML,
+      "author": document.getElementById('author-input').innerHTML,
+      "content": document.getElementById('content-textarea-input').value
     
 }
 
@@ -31,8 +24,10 @@ let formData = {
             },
             body: JSON.stringify(formData)
         })
+        location.replace('../admin/index.html');
 
     } catch(error){
+        console.log(error)
 
     }
 
