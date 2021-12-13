@@ -11,6 +11,10 @@ async function fetchAllPosts() {
     for (let post of data) {
       const postDivElement = document.createElement("div");
       postDivElement.classList.add("posts");
+      const postDate = new Date(post.date);
+      const formatDate = `${postDate.getFullYear()}-${
+        postDate.getMonth() + 1
+      }-${postDate.getDate()} ${postDate.getHours()}:${postDate.getMinutes()}`;
 
 
       if (post.content.length > 100) {
@@ -18,7 +22,7 @@ async function fetchAllPosts() {
         postsHTML = `
             <div class='title'><h3>${post.title}</h3></div>
             <div class='author'>${post.author}</div>
-            <div class='blog-date'>${post.date}</div>
+            <div class='blog-date'>${formatDate}</div>
             <div class='content'>${post.content.substring(
               0,
               100
