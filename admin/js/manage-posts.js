@@ -11,13 +11,15 @@ async function fetchJson() {
 
             const manageDivElement = document.createElement('tr')
             manageDivElement.classList.add('managePost');
-            console.log(post['_id'])
+            console.log(post['_id']);
+            const postDate = new Date(post.date);
+            const formatDate=`${postDate.getFullYear()}-${postDate.getMonth()+1}-${postDate.getDate()} ${postDate.getHours()}:${postDate.getMinutes()}`
 
             manageHTML = `
             <tr>
             <td>${post.title}</td>
             <td>${post.author}</td>
-            <td>${post.date}</td>
+            <td>${formatDate}</td>
             <td><a href="../admin/update-post.html?id=${post['_id']}">Update</a>|
             <a class="delete-links" data-id="${post['_id']}" herf='#'>Delete</a></td>
             </tr>
@@ -27,7 +29,7 @@ async function fetchJson() {
             manageElement.appendChild(manageDivElement)
         }
     } catch (error) {
-        
+        console.log(error)
     }
     deletePostEvent()
 }

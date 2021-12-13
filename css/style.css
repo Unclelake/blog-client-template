@@ -1,3 +1,8 @@
+
+body{
+    background-color: bisque;
+}
+
 .blog-header {
     display: flex;
     justify-content: center;
@@ -10,6 +15,4 @@
 .content {
     padding-top: 10px;
 }
- a .delete-links{
-    cursor: pointer;
-}
+ 

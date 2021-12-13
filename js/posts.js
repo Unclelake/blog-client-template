@@ -1,4 +1,5 @@
 const postsElement = document.querySelector(".blog-posts");
+const readMoreBtn = document.querySelector('.button')
 
 async function fetchAllPosts() {
   // console.log("fetching posts");
@@ -11,18 +12,45 @@ async function fetchAllPosts() {
       const postDivElement = document.createElement("div");
       postDivElement.classList.add("posts");
 
-      postsHTML = `
+
+      if (post.content.length > 100) {
+        //Display read me
+        postsHTML = `
+            <div class='title'><h3>${post.title}</h3></div>
+            <div class='author'>${post.author}</div>
+            <div class='blog-date'>${post.date}</div>
+            <div class='content'>${post.content.substring(
+              0,
+              100
+        )}  ...<a href="/post.html?post_id=${post['_id']}">Read more</a>
+            </div>
+            
+            <hr>
+            `;
+      } else {
+        //Do not display read me
+         postsHTML = `
             <div class='title'><h3>${post.title}</h3></div>
             <div class='author'>${post.author}</div>
             <div class='blog-date'>${post.date}</div>
             <div class='content'>${post.content}</div>
+            
             <hr>
             `;
+      }
+
+  
+      
+
+
+      
 
       postDivElement.innerHTML = postsHTML;
       postsElement.appendChild(postDivElement);
     }
-  } catch (error) {}
+  } catch (error) {
+    console.log(error)
+  }
 }
 
 /**
