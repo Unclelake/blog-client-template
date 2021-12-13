@@ -22,7 +22,7 @@ async function fetchAllPosts() {
             <div class='content'>${post.content.substring(
               0,
               100
-        )}  ...<a href="/post.html?post_id=${post['_id']}">Read more</a>
+        )}  ...<a href="post.html?post_id=${post['_id']}">Read more</a>
             </div>
             
             <hr>
