@@ -16,6 +16,7 @@ async function fetchPost(id) {
   
   const postDetails = `
     <div>${post.title}</div>
+    <div><i><b>Tags: </b>${post.tags}</i></div>
     <div>${post.author}</div>
     <div>${formatDate}</div>
     <div>${post.content}</div>
