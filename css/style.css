@@ -8,11 +8,10 @@ body{
     justify-content: center;
 }
 
-.author {
-    font-weight: bold;
-}
-
 .content {
     padding-top: 10px;
 }
  
+.container{
+    margin-top:2rem;
+}

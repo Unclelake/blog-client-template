@@ -21,8 +21,8 @@ async function fetchAllPosts() {
         //Display read me
         postsHTML = `
             <div class='title'><h3>${post.title}</h3></div>
-            <div class='tags'><i><b>Tags: </b>${post.tags}</i></div>
-            <div class='author'>${post.author}</div>
+            <div class='tags'><i><b>Tags: </b>${post.tags.join(", ")}</i></div>
+            <div class='author'><b>Author: </b>${post.author}</div>
             <div class='blog-date'>${formatDate}</div>
             <div class='content'>${post.content.substring(
               0,
@@ -36,9 +36,9 @@ async function fetchAllPosts() {
         //Do not display read me
          postsHTML = `
             <div class='title'><h3>${post.title}</h3></div>
-            <div class='tags'><i><b>Tags: </b>${post.tags}</i></div>
-            <div class='author'>${post.author}</div>
-            <div class='blog-date'>${post.date}</div>
+            <div class='tags'><i><b>Tags: </b>${post.tags.join(", ")}</i></div>
+            <div class='author'><b>Author: </b>${post.author}</div>
+            <div class='blog-date'>${formatDate}</div>
             <div class='content'>${post.content}</div>
             
             <hr>
