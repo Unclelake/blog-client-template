@@ -12,45 +12,52 @@
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body style="background-color: #fbf2ea">
-    <div class='container'>
-    <nav
-      class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end"
-    >
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="../index.html">Blogs Page</a>
-        </li>
-       
-      </ul>
-    </nav>
     <div class="container">
-      <div style="margin-bottom: 20px;"><h1>Handle Blog Posts</h1></div>
-       <li class="nav-item active" style="list-style-type: none;">
-          <a class="navLink" href="./create-post.html" style="float: right; color: rgb(235, 119, 11);font-weight: bold;">Create Post</a>
-        </li>
+      <nav
+        class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-end"
+      >
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="../index.html">Blogs Page</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="container">
+        <div class="row d-flex justify-content-between">
+          <div>
+            <div style="margin-bottom: 20px"><h1>Handle Blog Posts</h1></div>
+          </div>
+          <div>
+            <a
+              class="btn btn-outline-dark"
+              href="./create-post.html"
+              role="button"
+              >Create Post</a
+            >
+          </div>
+        </div>
 
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Title</th>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Title</th>
 
-            <th>Author</th>
-            <th>Date</th>
-            <th>Tags</th>
-            <th>Action</th>
-            
-          </tr>
-        </thead>
-        <tbody class="table-body">
-          <!-- <tr>
+              <th>Author</th>
+              <th>Date</th>
+              <th>Tags</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody class="table-body">
+            <!-- <tr>
             <td>Title 1</td>
             <td>Author 1</td>
             <td>12/12/2021</td>
             <td><a href="#">Update</a>/<a href="#">Delete</a></td>
           </tr> -->
-        </tbody>
-      </table>
-    </div>
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
