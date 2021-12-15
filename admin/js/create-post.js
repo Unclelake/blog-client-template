@@ -10,8 +10,8 @@ function createPostEvent(){
       e.preventDefault();
 
    let formData = {
-      "title": document.getElementById('title-input').innerHTML,
-      "author": document.getElementById('author-input').innerHTML,
+      "title": document.getElementById('title-input').value,
+      "author": document.getElementById('author-input').value,
       "content": document.getElementById('content-textarea-input').value
     
 }
