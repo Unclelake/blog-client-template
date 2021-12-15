@@ -4,17 +4,18 @@ window.onload = function(){
 
 function createPostEvent(){
     let createForm = document.getElementById("create-post-form");
-
-
     createForm.addEventListener('submit', async function(e) {
       e.preventDefault();
 
    let formData = {
+
       "title": document.getElementById('title-input').value,
       "author": document.getElementById('author-input').value,
       "content": document.getElementById('content-textarea-input').value
     
-}
+
+    }
+    
 
     try{
         await fetch('http://localhost:5000/posts', {
@@ -33,3 +34,6 @@ function createPostEvent(){
 
 })
 }
+
+
+
