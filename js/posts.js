@@ -1,5 +1,5 @@
 const postsElement = document.querySelector(".blog-posts");
-const readMoreBtn = document.querySelector('.button')
+const readMoreBtn = document.querySelector('.post')
 
 async function fetchAllPosts() {
   // console.log("fetching posts");
