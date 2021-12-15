@@ -16,7 +16,7 @@ async function fetchPost(id) {
   
   const postDetails = `
     <div><h1>${post.title}</h1></div>
-    <div><i><b>Tags: </b>${post.tags}</i></div>
+    <div><i><b>Tags: </b>${post.tags.join(", ")}</i></div>
     <div><b>Author: </b>${post.author}</div>
     <div>${formatDate}</div>
     <div class="content">${post.content}</div>
