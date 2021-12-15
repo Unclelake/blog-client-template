@@ -3,8 +3,7 @@ window.onload = function() {
     console.log(queryString);
     let urlParams = new URLSearchParams(queryString);
     console.log(urlParams.get('id'));
-
-     
+ 
     getPost(urlParams.get('id')); //urlParams.get('id')
     updatePost(urlParams.get('id'))
     
@@ -31,9 +30,6 @@ async function getPost(id){
             console.log(tag)
         }
 
-      
-
-
     }catch(error){
         console.log(error)
     }
@@ -46,21 +42,13 @@ function updatePost (id){
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        let options = document.querySelectorAll('option');
-        let tagsArr = [];
-
-        for (let option of options){
-            if(option.selected){
-                tagsArr.push(option.value);
-            }
-        }
 
         let formData = new FormData(form);
         formDataObject = {
             "content":formData.get('content'),
             "title": formData.get('title'),
             "author": formData.get('author'),
-            "tags": tagsArr
+            "tags": generatingTagsFromSelectedOtions()
         }
 
         console.log(formDataObject);
@@ -84,3 +72,14 @@ function updatePost (id){
 }
 
 
+function generatingTagsFromSelectedOtions () {
+    let options = document.querySelectorAll('option');
+        let tagsArr = [];
+
+        for (let option of options){
+            if(option.selected){
+                tagsArr.push(option.value);
+            }
+        }
+        return tagsArr;
+}
