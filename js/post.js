@@ -15,11 +15,11 @@ async function fetchPost(id) {
   }-${postDate.getDate()} ${postDate.getHours()}:${postDate.getMinutes()}`;
   
   const postDetails = `
-    <div>${post.title}</div>
-    <div><i><b>Tags: </b>${post.tags}</i></div>
-    <div>${post.author}</div>
+    <div><h1>${post.title}</h1></div>
+    <div><i><b>Tags: </b>${post.tags.join(", ")}</i></div>
+    <div><b>Author: </b>${post.author}</div>
     <div>${formatDate}</div>
-    <div>${post.content}</div>
+    <div class="content">${post.content}</div>
     
     
     `;
