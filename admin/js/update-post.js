@@ -18,12 +18,21 @@ async function getPost(id){
         }
         let post        = await response.json();
         console.log(post)
-        
+        console.log(post.tags)
     
-        document.getElementById('content-textarea').value   = post.content;
-        document.getElementById('author').value             = post.author;
         document.getElementById('title').value              = post.title;
-        document.getElementById('tags').selectedOptions     = post.tags;
+        document.getElementById('author').value             = post.author;
+        document.getElementById('content-textarea').value   = post.content;
+
+        for (let tag of post.tags){
+            let option = document.getElementById(tag)
+            option.setAttribute('selected', true)
+            console.log(option)
+            console.log(tag)
+        }
+
+      
+
 
     }catch(error){
         console.log(error)
@@ -37,13 +46,23 @@ function updatePost (id){
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
 
+        let options = document.querySelectorAll('option');
+        let tagsArr = [];
+
+        for (let option of options){
+            if(option.selected){
+                tagsArr.push(option.value);
+            }
+        }
+
         let formData = new FormData(form);
         formDataObject = {
             "content":formData.get('content'),
             "title": formData.get('title'),
             "author": formData.get('author'),
-            "tags": formData.get('tags')
+            "tags": tagsArr
         }
+
         console.log(formDataObject);
         console.log(JSON.stringify(formDataObject));
 
@@ -55,6 +74,7 @@ function updatePost (id){
                  },
                  body: JSON.stringify(formDataObject)
              })
+             console.log(formDataObject)
 
            location.replace('../admin/index.html');
          } catch(error) {
